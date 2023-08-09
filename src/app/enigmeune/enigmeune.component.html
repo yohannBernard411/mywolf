@@ -1,0 +1,61 @@
+<div>
+    <h1>Découvrez le colis piégé avant qu'il n'explose!!!</h1>
+    <form #qfirstForm="ngForm" (ngSubmit)="onSubmit1(qfirstForm)" *ngIf="!level1">
+        <h2>Premiére question:</h2>
+        <p>
+            <label for="qfirst">Quelle est la date de votre premiére rencontre avec l'agent Yohann BERNARD? </label>
+            <input type="date" name="qfirst" placeholder="jj/mm/aaaa" ngModel>
+        </p>
+        <button type="submit">Valider</button>
+    </form>
+    <p *ngIf="level1">Le colis se situe au rez de chaussé</p>
+
+    <form #qsecondForm="ngForm" (ngSubmit)="onSubmit2(qsecondForm)" *ngIf="level1 && !level2">
+        <h2>Deuxiéme question:</h2>
+        <p>
+            <label for="qsecond">A vous deux combien de trolls possédez vous? </label>
+            <input type="number" name="qsecond" placeholder="8" ngModel>
+        </p>
+        <button type="submit">Valider</button>
+    </form>
+    <p *ngIf="level2">Le colis se situe dans la cuisine</p>
+
+    <!-- <form #qthirdForm="ngForm" (ngSubmit)="onSubmit3(qthirdForm)" *ngIf="level2 && !level3"> -->
+    <form #qthirdForm="ngForm" *ngIf="level2 && !level3">
+        <h2>Troisième question:</h2>
+        <p>
+            <label for="qthird">Dans quels pays voudriez vous voyager? </label>
+            <select #teams (change)="onSelected()">
+                <option value="un">Australie, Congo, Antartique</option>
+                <option value="deux">France, Espagne, Italie</option>
+                <option value="trois">Irlande, Ecosse, Canada</option>
+                <option value="quatre">Mexique, Kosovo, Yemen</option>
+                <option value="cinq">Lituanie, Letonie, Estonie</option>
+              </select>
+            <!-- <input type="text" name="qthird" ngModel> -->
+        </p>
+        <!-- <button type="submit">Valider</button> -->
+    </form>
+    <p *ngIf="level3">Le cadeau se situe dans une armoire</p>
+
+    <!-- <form #qfourForm="ngForm" (ngSubmit)="onSubmit4(qfourForm)" *ngIf="level3 && !level4"> -->
+    <form #qfourForm="ngForm" *ngIf="level3 && !level4">
+        <h2>Quatriéme question:</h2>
+        <p>
+            <label for="qfour">Pour vous, quelle est la chose la plus importante dans un couple? </label>
+            <!-- <input type="text" name="qfour" ngModel> -->
+            <select #qualite (change)="onSelectedqualite()">
+                <option value="un">L'argent</option>
+                <option value="deux">Les amis</option>
+                <option value="trois">La politique</option>
+                <option value="quatre">La communication</option>
+                <option value="cinq">Les sorties</option>
+              </select>
+        </p>
+        <!-- <button type="submit">Valider</button> -->
+    </form>
+    <p *ngIf="level4">Le cadeau se situe dans l'armoire des assiettes</p>
+
+    <button *ngIf="level1 && level2 && level3 && level4" (click)="gotosecond()">J'ai trouvé le colis!!!</button>
+    
+</div>

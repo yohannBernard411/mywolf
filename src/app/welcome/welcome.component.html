@@ -1,0 +1,24 @@
+<div id="greenscreen">
+    <div id="borderline">
+        <h1>Mission impossible</h1>
+        <p>Agent Lorrie, veillez entrer vos identifiants:</p>
+        <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+            <p>
+                <label for="prenom">Prénom </label><br>
+                <input type="text" id="prenom" name="prenom" ngModel>
+            </p>
+            <p>
+                <label for="nom">Nom </label><br>
+                <input type="text" id="nom" name="nom" ngModel>
+            </p>
+            <p>
+                <label for="email">Email </label><br>
+                <input type="email" id="email" name="email" ngModel>
+            </p>
+            <button type="submit">Valider</button>
+        </form>
+    </div>
+    <div *ngIf="warning" id="warningdiv">
+        <p>Attention toutes les informations ne sont pas conformes!!!</p>
+    </div>
+</div>
