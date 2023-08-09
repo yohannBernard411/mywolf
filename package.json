@@ -1,13 +1,17 @@
 {
   "name": "birthday",
   "version": "0.0.0",
+  "engines": {
+    "node": "18.16.0",
+    "npm": "9.7.1"
+  },
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall" : "ng build --configuration production" 
+    "postinstall": "ng build --configuration production" 
   },
   "private": true,
   "dependencies": {
@@ -40,9 +44,5 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~5.0.2"
-  },
-  "engines": {
-    "node": "18.16.0",
-    "npm": "9.7.1"
   }
 }
