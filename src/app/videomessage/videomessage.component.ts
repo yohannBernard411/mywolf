@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Router} from "@angular/router"
 
 @Component({
@@ -6,7 +6,7 @@ import {Router} from "@angular/router"
   templateUrl: './videomessage.component.html',
   styleUrls: ['./videomessage.component.css']
 })
-export class VideomessageComponent implements OnInit {
+export class VideomessageComponent {
 
   constructor(private router: Router) { }
 
@@ -15,12 +15,6 @@ export class VideomessageComponent implements OnInit {
     mute: 0,
     autoplay: 1
   };
-
-  ngOnInit() {
-    setInterval(() => {
-      this.goFirstEnigme(); 
-    }, 3000);
-  }
 
   goFirstEnigme(){
     this.router.navigate(['/enigmeune']);

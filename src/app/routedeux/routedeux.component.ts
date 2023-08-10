@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+
 @Component({
-  selector: 'app-enigmedeux',
-  templateUrl: './enigmedeux.component.html',
-  styleUrls: ['./enigmedeux.component.css']
+  selector: 'app-routedeux',
+  templateUrl: './routedeux.component.html',
+  styleUrls: ['./routedeux.component.css']
 })
-export class EnigmedeuxComponent implements OnInit {
+export class RoutedeuxComponent implements OnInit {
 
   id: any = '';
   returnid: any = 0;
 
-
   constructor(private router: Router, private route: ActivatedRoute ) { }
-
-  
 
   level1: boolean = false;
   level2: boolean = false;
@@ -34,7 +32,7 @@ export class EnigmedeuxComponent implements OnInit {
   }
 }
 
-  onSubmit1(qunForm: any) {
+  onEnvoi1(qunForm: any) {
     if(["coulon", "Coulon", "COULON"].includes(qunForm.value.qun)) {
       this.level1 = true;
       this.router.navigate(['/carte', 1]);
@@ -43,7 +41,7 @@ export class EnigmedeuxComponent implements OnInit {
     }
   }
 
-  onSubmit2(qdeuxForm: any) {
+  onEnvoi2(qdeuxForm: any) {
     if(["saint maxire", "st maxire", "SAINT MAXIRE", "Saint Maxire", "st Marire", "st MAXIRE"].includes(qdeuxForm.value.qdeux)) {
       this.level2 = true;
       this.router.navigate(['/carte', 2]);
@@ -52,7 +50,7 @@ export class EnigmedeuxComponent implements OnInit {
     }
   }
 
-  onSubmit3(qtroisForm: any) {
+  onEnvoi3(qtroisForm: any) {
     if(["chauray", "Chauray"].includes(qtroisForm.value.qtrois)) {
       this.level3 = true;
       this.router.navigate(['/carte', 3]);

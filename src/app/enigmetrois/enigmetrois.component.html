@@ -1,0 +1,65 @@
+<div id="page">
+    <div id="title">
+      <h1>Découvrez le colis piégé avant qu'il n'explose!!!</h1>
+    </div>
+    <form #qfirstForm="ngForm" (ngSubmit)="onSubmit1(qfirstForm)" *ngIf="!level1">
+        <h2>Premiére question:</h2>
+        <p>
+            <label for="qfirst">Au tout debut quel nom avez vous donnez à l'agent Yohann pour l'enregistrer?</label>
+            <input type="text" name="qfirst" placeholder="bachibouzouc" ngModel>
+        </p>
+        <button type="submit">Valider</button>
+    </form>
+    <p *ngIf="level1" class="indice">Le colis se situe au rez de chaussé</p>
+
+    <form #qsecondForm="ngForm" (ngSubmit)="onSubmit2(qsecondForm)" *ngIf="level1 && !level2">
+        <h2>Deuxiéme question:</h2>
+        <p>
+            <label for="qsecond">Lorsque vous partez en mission avec votre voiture, quel engin vous suit toujours?</label>
+            <input type="text" name="qsecond" placeholder="avion" ngModel>
+        </p>
+        <button type="submit">Valider</button>
+    </form>
+    <p *ngIf="level2">Le colis se situe dans le salon</p>
+
+    <!-- <form #qthirdForm="ngForm" (ngSubmit)="onSubmit3(qthirdForm)" *ngIf="level2 && !level3"> -->
+    <form #qthirdForm="ngForm" *ngIf="level2 && !level3">
+        <h2>Troisième question:</h2>
+        <p>
+            <label for="qthird">Qu'y a t'il sur le pyjama de l'agent Yohann?</label>
+            <select #teams (change)="onSelected()">
+                <option value="un">Garfield</option>
+                <option value="deux">Raiponce</option>
+                <option value="trois">Avengers</option>
+                <option value="quatre">Transformer</option>
+                <option value="cinq">Iron man</option>
+              </select>
+            <!-- <input type="text" name="qthird" ngModel> -->
+        </p>
+        <!-- <button type="submit">Valider</button> -->
+    </form>
+    <p *ngIf="level3">Le colis se situe dans une armoire</p>
+
+    <!-- <form #qfourForm="ngForm" (ngSubmit)="onSubmit4(qfourForm)" *ngIf="level3 && !level4"> -->
+    <form #qfourForm="ngForm" *ngIf="level3 && !level4">
+        <h2>Quatriéme question:</h2>
+        <p>
+            <label for="qfour">Laquelle de ces pierres est une pierre de tolérance? </label>
+            <!-- <input type="text" name="qfour" ngModel> -->
+            <select #qualite (change)="onSelectedqualite()">
+                <option value="un">LA PIERRE DE LUNE</option>
+                <option value="deux">LA PIERRE DE MORGANITE</option>
+                <option value="trois">LA PIERRE DE CHRYSOCOLLE</option>
+                <option value="quatre">L'OEIL DE FAUCON</option>
+                <option value="cinq">LA PIERRE D'AVENTURINE</option>
+                <option value="six">LA PIERRE D'AIGUE MARINE</option>
+              </select>
+        </p>
+        <p *ngIf="indice">Indice: tu la porte en pendentif. Et un jour tu m'as dit : C'est une pierre de tolérance qui ouvre à de nouvelles idées et stimule l'écoute des autres. Elle aide à relativiser les situations et donne le courage et la force de bannir les peurs et d'avancer vers le bonheur. En plus d'être protectrice contre les mauvaises énergies</p>
+        <!-- <button type="submit">Valider</button> -->
+    </form>
+    <p *ngIf="level4">Le colis se situe dans l'armoire de la télé porte de gauche</p>
+
+    <button *ngIf="level1 && level2 && level3 && level4" (click)="gotosecond()">J'ai trouvé le colis!!!</button>
+    
+</div>

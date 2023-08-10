@@ -1,14 +1,13 @@
-
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { formatDate } from '@angular/common';
 
 @Component({
-  selector: 'app-enigmeune',
-  templateUrl: './enigmeune.component.html',
-  styleUrls: ['./enigmeune.component.css']
+  selector: 'app-enigmetrois',
+  templateUrl: './enigmetrois.component.html',
+  styleUrls: ['./enigmetrois.component.css']
 })
-export class EnigmeuneComponent {
+export class EnigmetroisComponent {
 
   constructor(private router: Router ) { }
 
@@ -17,17 +16,18 @@ export class EnigmeuneComponent {
   level3: boolean = false;
   level4: boolean = false;
 
-  maDate = formatDate(new Date(),'2023-07-08', 'fr');
+  indice: boolean = false;
+
 
   onSubmit1(qfirstForm: any) {
-    if(qfirstForm.value.qfirst==this.maDate) {
+    if(["mywolf", "MYWOLF", "My Wolf", "my wolf", "MY WOLF", "My wolf", "Mywolf"].includes(qfirstForm.value.qfirst)) {
       this.level1 = true;
     }else{
       this.level1 = false;
     }
   }
   onSubmit2(qsecondForm: any) {
-    if(qsecondForm.value.qsecond=="trois" || qsecondForm.value.qsecond=="3") {
+    if(["moto", "une moto", "Une moto", "UNE MOTO", "Une Moto"].includes(qsecondForm.value.qsecond)) {
       this.level2 = true;
     }else{
       this.level2 = false;
@@ -63,7 +63,9 @@ export class EnigmeuneComponent {
     console.log("valeur choisit: "+ this.selectedQualite);
     if(this.selectedQualite=="quatre") {
       this.level4 = true;
+      this.indice = false;
     }else{
+      this.indice = true;
       this.level4 = false;
     }
 	}
@@ -77,7 +79,7 @@ export class EnigmeuneComponent {
   // }
 
   gotosecond(){
-    this.router.navigate(['/routedeux', 1]);
+    this.router.navigate(['/amour']);
   }
 
 }

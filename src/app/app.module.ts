@@ -15,8 +15,10 @@ import { EnigmeuneComponent } from './enigmeune/enigmeune.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
-import { EnigmedeuxComponent } from './enigmedeux/enigmedeux.component';
 import { CarteComponent } from './carte/carte.component';
+import { RoutedeuxComponent } from './routedeux/routedeux.component';
+import { EnigmetroisComponent } from './enigmetrois/enigmetrois.component';
+import { AmourComponent } from './amour/amour.component';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -25,8 +27,10 @@ registerLocaleData(localeFr);
     WelcomeComponent,
     VideomessageComponent,
     EnigmeuneComponent,
-    EnigmedeuxComponent,
-    CarteComponent
+    CarteComponent,
+    RoutedeuxComponent,
+    EnigmetroisComponent,
+    AmourComponent
   ],
   imports: [
     BrowserModule,

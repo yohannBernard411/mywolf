@@ -27,11 +27,11 @@ export class CarteComponent {
 
   retour(){
     if(this.id==1){
-    this.router.navigate(['/enigmedeux', 2]);
+    this.router.navigate(['/routedeux', 2]);
     }else if(this.id==2){
-      this.router.navigate(['/enigmedeux', 3]);
+      this.router.navigate(['/routedeux', 3]);
     }else if(this.id==3){
-      this.router.navigate(['/enigmedeux', 4]);
+      this.router.navigate(['/routedeux', 4]);
     }
   }
 

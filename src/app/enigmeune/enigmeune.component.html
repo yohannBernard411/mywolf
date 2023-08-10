@@ -1,5 +1,7 @@
-<div>
-    <h1>Découvrez le colis piégé avant qu'il n'explose!!!</h1>
+<div id="page">
+    <div id="title">
+      <h1>Découvrez le colis piégé avant qu'il n'explose!!!</h1>
+    </div>
     <form #qfirstForm="ngForm" (ngSubmit)="onSubmit1(qfirstForm)" *ngIf="!level1">
         <h2>Premiére question:</h2>
         <p>
@@ -8,7 +10,7 @@
         </p>
         <button type="submit">Valider</button>
     </form>
-    <p *ngIf="level1">Le colis se situe au rez de chaussé</p>
+    <p *ngIf="level1" class="indice">Le colis se situe au rez de chaussé</p>
 
     <form #qsecondForm="ngForm" (ngSubmit)="onSubmit2(qsecondForm)" *ngIf="level1 && !level2">
         <h2>Deuxiéme question:</h2>
@@ -36,7 +38,7 @@
         </p>
         <!-- <button type="submit">Valider</button> -->
     </form>
-    <p *ngIf="level3">Le cadeau se situe dans une armoire</p>
+    <p *ngIf="level3">Le colis se situe dans une armoire</p>
 
     <!-- <form #qfourForm="ngForm" (ngSubmit)="onSubmit4(qfourForm)" *ngIf="level3 && !level4"> -->
     <form #qfourForm="ngForm" *ngIf="level3 && !level4">
@@ -54,7 +56,7 @@
         </p>
         <!-- <button type="submit">Valider</button> -->
     </form>
-    <p *ngIf="level4">Le cadeau se situe dans l'armoire des assiettes</p>
+    <p *ngIf="level4">Le colis se situe dans l'armoire des assiettes</p>
 
     <button *ngIf="level1 && level2 && level3 && level4" (click)="gotosecond()">J'ai trouvé le colis!!!</button>
     

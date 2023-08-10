@@ -1,8 +1,29 @@
 #videoContent{
-    width: 80vw;
+    width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content:space-around;
     align-items: center;
+}
+#videoplace{
+    width: 100vw;
+    height: 80vh;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+#buttonplace{
+    width: 100vw;
+    height: 20vh;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+button{
+    margin-left: 20px;
 }

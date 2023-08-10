@@ -1,15 +1,17 @@
-<div>
-    <h1>Découvrez le colis piégé avant qu'il n'explose!!!</h1>
-    <form #qunForm="ngForm" (ngSubmit)="onSubmit1(qunForm)" *ngIf="!level1">
+<div id="page">
+    <div id="title">
+      <h1>Découvrez le colis piégé avant qu'il n'explose!!!</h1>
+      </div>
+    <form #qunForm="ngForm" (ngSubmit)="onEnvoi1(qunForm)" *ngIf="!level1">
         <h2>Premiére question:</h2>
         <p>
-            <label for="qfirst">Dans quel vilage avez vous effectué votre derniére mission en barque? </label>
+            <label for="qfirst">Dans quel village avez vous effectué votre derniére mission en barque? </label>
             <input type="text" name="qun" placeholder="Chaurray" ngModel>
         </p>
         <button type="submit">Valider</button>
     </form>
 
-    <form #qdeuxForm="ngForm" (ngSubmit)="onSubmit2(qdeuxForm)" *ngIf="level1 && !level2">
+    <form #qdeuxForm="ngForm" (ngSubmit)="onEnvoi2(qdeuxForm)" *ngIf="level1 && !level2">
         <h2>Deuxiéme question:</h2>
         <p>
             <label for="qdeux">Dans quelle vilage avez vous effectué votre mission avec des bateaux fleuris? </label>
@@ -18,8 +20,8 @@
         <button type="submit">Valider</button>
     </form>
 
-    <form #qtroisForm="ngForm" (ngSubmit)="onSubmit3(qtroisForm)" *ngIf="level2 && !level3">
-        <h2>TRoisieme question:</h2>
+    <form #qtroisForm="ngForm" (ngSubmit)="onEnvoi3(qtroisForm)" *ngIf="level2 && !level3">
+        <h2>Troisieme question:</h2>
         <p>
             <label for="qtrois">Dans quelle vilage se situe la célébre adresse: 12 rue des églantiers? </label>
             <input type="text" name="qtrois" placeholder="Rochefort" ngModel>

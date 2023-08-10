@@ -3,13 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { VideomessageComponent } from './videomessage/videomessage.component';
 import { EnigmeuneComponent } from './enigmeune/enigmeune.component';
-import { EnigmedeuxComponent } from './enigmedeux/enigmedeux.component';
+import { RoutedeuxComponent } from './routedeux/routedeux.component';
 import { CarteComponent } from './carte/carte.component';
+import { EnigmetroisComponent } from './enigmetrois/enigmetrois.component';
+import { AmourComponent } from './amour/amour.component';
 
 
 const routes: Routes = [
+  { path: 'amour', component: AmourComponent },
+  { path: 'enigmetrois', component: EnigmetroisComponent },
   { path: 'carte/:id', component: CarteComponent },
-  { path: 'enigmedeux/:id', component: EnigmedeuxComponent },
+  { path: 'routedeux/:id', component: RoutedeuxComponent },
   { path: 'enigmeune', component: EnigmeuneComponent },
   { path: 'videomessage', component: VideomessageComponent },
   { path: 'welcome', component: WelcomeComponent },
