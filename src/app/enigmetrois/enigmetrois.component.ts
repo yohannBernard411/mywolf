@@ -27,7 +27,7 @@ export class EnigmetroisComponent {
     }
   }
   onSubmit2(qsecondForm: any) {
-    if(["moto", "une moto", "Une moto", "UNE MOTO", "Une Moto"].includes(qsecondForm.value.qsecond)) {
+    if(["moto", "une moto", "Moto", "Une moto", "UNE MOTO", "Une Moto"].includes(qsecondForm.value.qsecond)) {
       this.level2 = true;
     }else{
       this.level2 = false;
